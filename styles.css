@@ -47,11 +47,14 @@ img {
   --verde: #7ac943;
 }
 
-body {
+body,
+header,
+section {
   align-items: center;
   background-color: var(--gris-medio);
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .header {
@@ -68,7 +71,7 @@ body {
 }
 
 .header-img {
-  background: center / contain no-repeat url(./images/juliana.jpeg);
+ 
   border-radius: 50%;
   border: 1px solid var(--gris-oscuro);
   box-shadow: 8px 16px 32px 0px var(--shadow);
@@ -82,8 +85,13 @@ body {
   cursor: pointer;
   display: flex;
   justify-content: space-around;
-  margin: 24px 0;
+  margin: 24px auto;
   width: 50%;
+}
+.nav-item a {
+  text-decoration: none;
+  color: var(--blanco)
+  
 }
 
 .nav-item {
@@ -93,7 +101,8 @@ body {
   font-family: var(--secondary-font);
   height: 30px;
   justify-content: center;
-  width: 33%;
+  width: 16vw;
+  border: 1px solid red;
 }
 
 .nav-item:hover {
@@ -101,7 +110,7 @@ body {
 }
 
 .intro {
-  margin: 0 196px;
+  margin: 24px 196px 0 ;
   font-family: var(--secondary-font);
 }
 
@@ -138,8 +147,15 @@ body {
   margin: 0 8px;
   transition: all 0.2s ease-in-out;
   width: 250px;
+  object-fit: cover;
 }
-
+.project-container li{
+  display: inline-block;
+}
+.project-container button{
+  background: none;
+  border: none;
+}
 .project:hover {
   cursor: pointer;
   transform: scale(1.1);
@@ -240,7 +256,9 @@ input {
   top: 24px;
   width: 300px;
 }
-
+nav{
+  width: 100%;
+}
 .modal-container {
   align-items: center;
   background-color: rgba(000, 000, 000, 0.2);
