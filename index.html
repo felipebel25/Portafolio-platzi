@@ -12,25 +12,26 @@
   </head>
 
   <body>
+    <a href="#main" class='skip-link'>Saltar al contenido</a>
     <header>
     <img src='images/juliana.jpeg' alt='foto de la persona' class="header-img" />
     <h1 class="header">Juliana Gomez</h1>
     <h2 class="subtitle">Front End Developer</h2>
-    <nav >
+    <nav>
       <ul class="navigation">
         <li>   
           <div class="nav-item"> 
-            <a href="/">Acerca de</a> </div>
+            <a href="/acerca de">Acerca de</a> </div>
         </li>
         <li><div class="nav-item">
-          <a href="/">Mis Proyectos</a></div>
+          <a href="/proyectos">Mis Proyectos</a></div>
           </li>
         <li><div class="nav-item">
-          <a href="/">Contacto</a> </div></li>
+          <a href="/contacto">Contacto</a> </div></li>
       </ul>
     </nav>
   </header>
-  <main>   
+  <main id="main">   
     <section>
       <h2 class='header'>Mis proyectos</h2>
     <div class="intro">
@@ -42,60 +43,66 @@
       Sueño con una web donde todo el mundo pueda participar. Aquí puedes ver
       algunos de mis proyectos recientes y también puedes contactarme por si
       quieres hablar de tecnología, accesibilidad o gatos!</p>
-      
-      <div class="social-media">
-        <div>
+    </div>
+      <ul class="social-media">
+        <li>
           <a href="https://twitter.com/gmzjuliana" target="_blank" alt='Twitter de juliana'
           ><img src="images/twitter.png" alt='png twitter'
-          /></a>
-        </div>
-        <div>
-          <a href="https://github.com/gmzjuliana" target="_blank" alt='github de felipe Medina'
-          ><img src="images/github-logo.png" alt='github png'
-          /></a>
-        </div>
-        <div>
+          />
+        <p class="social-link-text"> Twita</p>
+        </a>
+      </li>
+        <li>
+          <a href="https://github.com/gmzjuliana" target="_blank" 
+          ><img src="images/github-logo.png" alt='github de felipe'
+          /> <p class="social-link-text"> Github</p></a>
+        </li>
+        <li>
           <a href="https://www.linkedin.com/in/gomezjuliana/" target="_blank" alt='LinkedIn de felipe'
           ><img src="images/linkedin.png" alt='linkedin png'
-          /></a>
-        </div>
-      </div>
+          /> <p class="social-link-text"> Linkedin</p></a>
+        </li>
+      </ul>
     </section>
       
-      <section>
-  <h2 class='header'>Mis proyectos</h2>
-    <div class="carousel" aria-label="boton de atras">
-      <div class="arrow arrow-left"></div>
+    <section>
+      <h2 class="header">Mis Proyectos</h2>
+    <div class="carousel">
+      <button class="arrow arrow-left" aria-label="backward button"></button>
       <div class="window">
         <ul class="project-container">
-          <li><button><img src="/curso-acessibilidad-web/images/project1.png" alt="imagen de un proyecto " class="project project1"></button></li>
-          <li><button><img src="/curso-acessibilidad-web/images/project2.png" alt="imagen de un proyecto" class="project project2"></button></li>
-          <li><button><img src="/curso-acessibilidad-web/images/project3.png" alt="imagen de un proyecto" class="project project3"></button></li>
-          <li><button><img src="/curso-acessibilidad-web/images/project4.png" alt="imagen de un proyecto" class="project project4"></button></li>
-          <li><button><img src="/curso-acessibilidad-web/images/project5.png" alt="imagen de un proyecto" class="project project5"></button></li>
-        </ul>
+          <li class="project1-container"><button class="project1 project" ><img src="images/project1.png" class="project-img" alt="Mi primer proyecto"/></button></li>
+          <li class="project2-container"><button class="project2 project"><img src="images/project2.png" class="project-img" alt="Mi segundo proyecto" /></button></li>
+          <li class="project3-container"><button class="project3 project"><img src="images/project3.png"class="project-img" alt="Mi tercero proyecto"/></button></li>
+          <li class="project4-container" aria-hidden="true"><button class="project4 project" tabindex="-1"><img src="images/project4.png" class="project-img" alt="Mi cuarto proyecto"/></button></li>
+          <li class="project5-container" aria-hidden="true"><button class="project5 project" tabindex="-1"><img src="images/project5.png" class="project-img" alt="Mi quinto proyecto"/></button></li>
+        </ul> 
       </div>
-      <div class="arrow arrow-right" aria-label="boton de adelante"></div>
-    </div> 
+      <button class="arrow arrow-right" aria-label="forward button"></button>
+    </div>
   </section>
   </main>
 
 
     <footer class="contact-section">
       <h2 class="header">Contacto</h2>
+      <p class="intro">puedes usar el formulario para mandarme un mensaje tkm</p>
       <form class="form-container">
-        Nombre<input type="text" aria-label="formulario Nombre" /> <br />
-        Correo<input type="text" aria-label="formulario Correo"/> <br />
+      <label class="form-label">Nombre</label>  <input type="text" aria-label="formulario Nombre"  id="name"/> <br />
+      <span id="name-error" aria-live="assertive"></span>
+      <label class="form-label">Correo</label> <input type="text" aria-label="formulario Correo" /> <br />
         <div class="message-input">Mensaje<input type="text" aria-label="SOy un mensaje"/> <br /></div>
         <button class="send-button" aria-label="boton enviar">Enviar</button>
       </form>
     </footer>
 
-    <div class="notification">El formulario fue enviado sin errores</div>
+    <div class="notification" aria-live="assertive">El formulario fue enviado sin errores</div>
+    
     <div class="modal-container">
       <div class="modal">
-        Ejemplo de un proyecto mio
-        <div class="modal-project-image"></div>
+        <h2 class="header" id="modal-header" tabindex="0">  Ejemplo de un proyecto mio</h2>
+        <img src="/images/project1.png" alt="pantallazo de proyecto mio" class="modal-project-image">
+        <button class="modal-close">Cerrados</button>
       </div>
     </div>
 

@@ -102,16 +102,33 @@ section {
   height: 30px;
   justify-content: center;
   width: 16vw;
-  border: 1px solid red;
+
 }
 
-.nav-item:hover {
+.nav-item:hover,
+.nav-item a:hover
+{
   background-color: var(--verde);
+
+  font-weight: bold;
+  
+  color: var(--gris-oscuro)
 }
+.nav-item:focus-within
+{
+  background-color: var(--verde);
+
+}
+.nav-item :focus{
+  outline: none;
+  color: var(--gris-oscuro); 
+}
+
 
 .intro {
   margin: 24px 196px 0 ;
   font-family: var(--secondary-font);
+  color:var(--blanco);
 }
 
 .social-media {
@@ -120,6 +137,14 @@ section {
   justify-content: space-around;
   margin: 32px auto 0;
   width: 20%;
+}
+.social-media li a:focus{
+  outline: none;
+  
+}
+.social-media li a:focus-within{
+  outline: 3px solid var(--verde);
+  padding: 8px;
 }
 
 .carousel {
@@ -130,7 +155,8 @@ section {
 
 .window {
   overflow: hidden;
-  width: 805px;
+  width: 815px;
+  padding: 8px;
 }
 
 .project-container {
@@ -139,7 +165,7 @@ section {
   width: 1500px;
 }
 
-.project {
+.project-img {
   border-radius: 5px;
   border: 2px solid #000;
   display: inline-block;
@@ -155,6 +181,11 @@ section {
 .project-container button{
   background: none;
   border: none;
+  padding: 0;
+}
+.project-container button:focus-within
+{
+  outline: 3px solid var(--verde);
 }
 .project:hover {
   cursor: pointer;
@@ -202,7 +233,9 @@ section {
   background-color: var(--verde);
   border-radius: 50%;
 }
-
+.arrow:focus{
+  outline: 3px solid var(--verde);
+}
 .contact-section {
   align-items: center;
   background-color: var(--gris-oscuro);
@@ -215,23 +248,48 @@ section {
   display: flex;
   flex-direction: column;
   width: 30%;
+  color: var(--blanco);
 }
-
+.form-label{
+  color: var(--verde);
+  font-size: 1.4rem;
+}
+.message-input{
+  font-size: 1.6rem;
+  color: var(--verde);
+}
 .message-input input {
   height: 150px;
   margin-bottom: 16px;
 }
 
 input {
-  outline: none;
+
   width: 100%;
 }
+input:focus{
+  outline: 3px solid var(--verde);
+  padding: 8px;
+}
+.social-media li a{
+  align-items: center;
+  display: flex;
+  color: var(--blanco);
+  text-decoration: none;
+  
+  font-family: var(--secondary-font);
+}
+.social-link-text{
+  padding-right: 8px;
+  padding-left: 8px;
+}
 
-.send-button {
+.send-button,
+.modal-close {
   align-items: center;
   background-color: var(--verde);
   border-radius: 5px;
-  color: white;
+  color: var(--gris-oscuro);
   font-family: var(--secondary-font);
   display: flex;
   height: 50px;
@@ -239,8 +297,40 @@ input {
   margin-bottom: 48px;
   width: 150px;
   margin-left: auto;
+  cursor: pointer;
+
+}
+.modal-close{
+  margin-right: 30px;
 }
 
+.send-button:focus,
+.modal-close:focus
+{
+  outline: 3px solid var(--verde);
+  padding: 8px;
+  color: var(--gris-oscuro)
+}
+.send-button:hover,
+.modal-close:hover{
+  color: var(--gris-oscuro)
+} 
+.skip-link{
+  height:0;
+}
+.skip-link:focus,
+.skip-link:active{
+  background-color: var(--verde);
+  border-radius: 5px;
+  color: var(--gris-oscuro);
+  font-family: (var(--secondary-font));
+  height:auto;
+  margin: 16px 0 8px;
+  padding:8px;
+  text-decoration: none;
+  border: 3px solid var(--gris-oscuro);
+  outline: 3px solid var(--verde);
+}
 .notification {
   align-items: center;
   background-color: var(--verde);
@@ -267,6 +357,7 @@ nav{
   justify-content: center;
   position: fixed;
   width: 100vw;
+  
 }
 
 .modal {
@@ -281,8 +372,13 @@ nav{
   position: fixed;
   top: 15%;
   width: 700px;
+  
 }
-
+#name-error{
+  color:var(--blanco);
+  font-family: var(--secondary-font);
+  
+}
 .modal-project-image {
   background: center / cover no-repeat url(./images/project1.png);
   border-radius: 5px;
